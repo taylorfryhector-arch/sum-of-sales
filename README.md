@@ -1,7 +1,7 @@
 # Sum of Sales Application
 
 ## Overview
-The Sum of Sales application is a web-based tool designed to calculate and display the total sales from a dataset. It allows users to view the total sales in different currencies by selecting from a currency picker.
+The Sum of Sales application is a web-based tool designed to calculate and display the total sales from a dataset. It allows users to view the total sales in different currencies by selecting from a currency picker. The application uses predefined exchange rates to convert the total sales amount into the selected currency.
 
 ## Setup and Installation
 1. Clone the repository to your local machine.
@@ -10,17 +10,14 @@ The Sum of Sales application is a web-based tool designed to calculate and displ
 ## Usage
 - Open `index.html` in a web browser.
 - Use the currency picker to select the desired currency.
-- The total sales will be displayed in the selected currency.
+- The total sales amount will be automatically converted and displayed in the selected currency.
 
 ## Code Structure
 - `index.html`: The main HTML file containing the structure of the application.
-- `app.js`: Contains the JavaScript logic for handling currency conversion and updating the total sales display.
-- `rates.json`: Contains the currency conversion rates used in the application.
+- `app.js`: Contains the JavaScript logic for handling currency conversion and updating the displayed total sales.
+- `data.csv`: A CSV file containing sales data (not directly used in the current implementation).
 
 ## Functionality
-- The application reads sales data and calculates the total sales.
-- Users can select a currency from the dropdown, and the total sales will be converted and displayed in the selected currency.
-- The conversion rates are predefined in the `rates.json` file.
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+- The application initializes with a default total sales amount.
+- Users can select a currency from the dropdown menu, which triggers a conversion of the total sales amount using predefined exchange rates.
+- The converted total and the selected currency are displayed on the page.
