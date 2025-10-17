@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Sales</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sum of Sales</title>
+    <script defer src="app.js"></script>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1>Product Sales</h1>
-        <table id="product-sales" class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Total Sales</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be populated by JavaScript -->
-            </tbody>
-        </table>
-        <h3>Total Sales: <span id="total-sales">0</span></h3>
+    <h1>Sales Summary</h1>
+    <div>
+        <label for="currency-picker">Select Currency:</label>
+        <select id="currency-picker">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+        </select>
     </div>
-    <script src="app.js"></script>
+    <div>
+        <p>Total Sales: <span id="total-sales">0</span> <span id="total-currency">USD</span></p>
+    </div>
 </body>
 </html>

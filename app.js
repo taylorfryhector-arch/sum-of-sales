@@ -1,29 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const salesData = [
-        { product: 'Product A', sales: 150 },
-        { product: 'Product B', sales: 200 },
-        { product: 'Product C', sales: 150 }
-    ];
-
-    const tableBody = document.querySelector('#product-sales tbody');
+document.addEventListener('DOMContentLoaded', () => {
+    const currencyPicker = document.getElementById('currency-picker');
     const totalSalesElement = document.getElementById('total-sales');
+    const totalCurrencyElement = document.getElementById('total-currency');
 
-    let totalSales = 0;
+    let totalSales = 0; // Assume this is calculated from data.csv
+    const rates = {
+        "USD": 1,
+        "EUR": 0.85,
+        "GBP": 0.75
+    };
 
-    salesData.forEach(item => {
-        const row = document.createElement('tr');
-        const productCell = document.createElement('td');
-        const salesCell = document.createElement('td');
+    function updateTotalSales() {
+        const selectedCurrency = currencyPicker.value;
+        const conversionRate = rates[selectedCurrency];
+        const convertedTotal = totalSales * conversionRate;
+        totalSalesElement.textContent = convertedTotal.toFixed(2);
+        totalCurrencyElement.textContent = selectedCurrency;
+    }
 
-        productCell.textContent = item.product;
-        salesCell.textContent = item.sales.toFixed(2);
+    currencyPicker.addEventListener('change', updateTotalSales);
 
-        row.appendChild(productCell);
-        row.appendChild(salesCell);
-        tableBody.appendChild(row);
-
-        totalSales += item.sales;
-    });
-
-    totalSalesElement.textContent = totalSales.toFixed(2);
+    // Initial calculation
+    updateTotalSales();
 });
